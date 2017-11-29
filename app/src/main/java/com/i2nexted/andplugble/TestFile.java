@@ -5,4 +5,6 @@ package com.i2nexted.andplugble;
  */
 
 public class TestFile {
+    private int a;
+    private int b;
 }
