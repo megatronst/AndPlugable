@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndPlugble</string>
+    <string name="btn_text_invoke_normal_func">执行通过加载class文件获取到的对象的普通方法</string>
+    <string name="btn_text_invoke_static_func">执行通过加载class文件获取到的对象的静态方法</string>
 </resources>

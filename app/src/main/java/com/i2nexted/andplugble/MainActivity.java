@@ -1,19 +1,16 @@
 package com.i2nexted.andplugble;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.i2nexted.andplugble.classloader.FileSystemClassLoader;
+import com.i2nexted.andplugble.classloader.useless.FileSystemClassLoader;
 import com.i2nexted.andplugble.utils.FileUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import dalvik.system.DexClassLoader;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button btnLoadClassFile;

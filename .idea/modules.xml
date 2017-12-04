@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndPlugable.iml" filepath="$PROJECT_DIR$/AndPlugable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tetslib/tetslib.iml" filepath="$PROJECT_DIR$/tetslib/tetslib.iml" />
     </modules>
   </component>
 </project>
