@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndPlugable.iml" filepath="$PROJECT_DIR$/AndPlugable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/host.iml" filepath="$PROJECT_DIR$/host.iml" />
       <module fileurl="file://$PROJECT_DIR$/tetslib/tetslib.iml" filepath="$PROJECT_DIR$/tetslib/tetslib.iml" />
     </modules>
   </component>

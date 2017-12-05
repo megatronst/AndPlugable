@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InstalledPluginsActivity" />
-        <activity android:name=".UninstalledPluginsActivity"></activity>
+        <activity android:name=".UninstalledPluginsActivity" />
+        <activity android:name=".UseApkLayoutFileActivity"></activity>
     </application>
 
 </manifest>

@@ -5,4 +5,6 @@
     <string name="text_open_uninstalled_activity">打开未安装的apk中包含的activity</string>
     <string name="text_use_installed_apk_recource">使用已安装的apk中的图片资源</string>
     <string name="text_use_uninstalled_apk_resource">使用未安装的apk中的图片资源</string>
+    <string name="text_use_uninstalled_apk_layoutfile">使用未安装的apk中的布局文件</string>
+
 </resources>

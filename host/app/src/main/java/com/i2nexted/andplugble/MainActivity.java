@@ -23,9 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenActivity;
     private Button btnOpenInstalledActivity;
     private Button btnUseUninstalledApkResource;
-
-
-
+    private Button btnUseUninstalledApkLayoutfile;
 
     private boolean uninstalledApkOpend = false;
 
@@ -55,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_use_uninstalled_apk_resource:
                 useUninstalledApkResource();
                 break;
+            case R.id.btn_use_uninstalled_apk_layoutfile:
+                useUninstalledApkLayoutfile();
+                break;
         }
     }
 
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOpenInstalledActivity.setOnClickListener(this);
         btnUseUninstalledApkResource = (Button) findViewById(R.id.btn_use_uninstalled_apk_resource);
         btnUseUninstalledApkResource.setOnClickListener(this);
+        btnUseUninstalledApkLayoutfile = (Button) findViewById(R.id.btn_use_uninstalled_apk_layoutfile);
+        btnUseUninstalledApkLayoutfile.setOnClickListener(this);
     }
 
     private void invokeNormalMethod(){
@@ -160,6 +163,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void useUninstalledApkResource(){
         startActivity(new Intent(MainActivity.this, UninstalledPluginsActivity.class));
+    }
+
+    private void useUninstalledApkLayoutfile(){
+
     }
 
     @Override

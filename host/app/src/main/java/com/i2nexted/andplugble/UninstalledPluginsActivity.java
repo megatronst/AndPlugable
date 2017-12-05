@@ -6,10 +6,12 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -80,12 +82,19 @@ public class UninstalledPluginsActivity extends AppCompatActivity implements Ada
             String dexPath = apkPath;
             String dexOutPath = getDir("apk2", 0).getAbsolutePath();
             DexClassLoader dexClassLoader = new DexClassLoader(dexPath, dexOutPath, null, ClassLoader.getSystemClassLoader());
-            Class clazz = dexClassLoader.loadClass(packageName + ".R$drawable");
-            Field resFied = clazz.getDeclaredField("login_logo");
-            int resId = resFied.getInt(R.drawable.class);
+//            Class clazz = dexClassLoader.loadClass(packageName + ".R$drawable");
+            Class clazz = dexClassLoader.loadClass(packageName + ".R$layout");
+            Field resFied = clazz.getDeclaredField("activity_main");
+//            int resId = resFied.getInt(R.drawable.class);
+            int resId = resFied.getInt(R.layout.class);
             Resources resource = getApkResource(apkPath);
             if (resource != null){
-                ((ImageView)findViewById(R.id.img_other_apk)).setImageDrawable(resource.getDrawable(resId));
+//                ((ImageView)findViewById(R.id.img_other_apk)).setImageDrawable(resource.getDrawable(resId));
+//                setContentView(resource.getLayout(resId));
+
+                XmlResourceParser xmlResourceParser = resource.getXml(resId);
+                View view = LayoutInflater.from(this).inflate(xmlResourceParser, null);
+                setContentView(view);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
