@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndPlugble</string>
+    <string name="btn_text_invoke_normal_func">执行通过加载class文件获取到的对象的普通方法</string>
+    <string name="btn_text_invoke_static_func">执行通过加载class文件获取到的对象的静态方法</string>
+    <string name="text_open_uninstalled_activity">打开未安装的apk中包含的activity</string>
+    <string name="text_use_installed_apk_recource">使用已安装的apk中的图片资源</string>
+    <string name="text_use_uninstalled_apk_resource">使用未安装的apk中的图片资源</string>
+</resources>
