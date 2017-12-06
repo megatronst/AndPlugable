@@ -1,6 +1,7 @@
 package com.i2nexted.andplugble.common;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.i2nexted.andplugble.utils.FileUtil;
 
@@ -9,11 +10,16 @@ import com.i2nexted.andplugble.utils.FileUtil;
  */
 
 public class MyApplication extends Application {
-
+    private static Context instance;
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         initFileUtil();
+    }
+
+    public static Context getInstance(){
+        return instance;
     }
 
     private void initFileUtil(){

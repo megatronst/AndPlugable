@@ -1,1 +1,1 @@
-include ':app', ':tetslib'
+include ':app', ':tetslib', ':plugin_a'

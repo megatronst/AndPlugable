@@ -6,5 +6,12 @@
     <string name="text_use_installed_apk_recource">使用已安装的apk中的图片资源</string>
     <string name="text_use_uninstalled_apk_resource">使用未安装的apk中的图片资源</string>
     <string name="text_use_uninstalled_apk_layoutfile">使用未安装的apk中的布局文件</string>
+    <string name="text_static_proxy_eg">静态代理实例</string>
+    <string name="text_dynamic_proxy_eg">动态代理实例</string>
+    <string name="text_proxy_eg">代理模式实例</string>
+    <string name="toast_about_to_start_a_activity">马上要打开一个activity了</string>
+    <string name="toast_rom_modyfied">rom 层被修改了，我也很无奈，自己去适配额</string>
+    <string name="text_open_modified_context_impl_instrumentation">通过修改ContextImpl中的instrumentation打开activity</string>
+    <string name="text_open_modified_activity_instrumentation">通过修改Activity中的instrumentation打开activity</string>
 
 </resources>

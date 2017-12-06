@@ -39,6 +39,9 @@
             android:id="@+id/btn_use_uninstalled_apk_layoutfile"
             style="@style/btn_style"
             android:text="@string/text_use_uninstalled_apk_layoutfile" />
-
+        <Button
+            android:id="@+id/btn_proxy_pattern_eg"
+            style="@style/btn_style"
+            android:text="@string/text_proxy_eg"/>
     </LinearLayout>
 </ScrollView>

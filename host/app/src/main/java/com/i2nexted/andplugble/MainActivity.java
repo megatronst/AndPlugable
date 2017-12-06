@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenInstalledActivity;
     private Button btnUseUninstalledApkResource;
     private Button btnUseUninstalledApkLayoutfile;
-
+    private Button btnProxyPatternEg;
     private boolean uninstalledApkOpend = false;
 
 
@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_use_uninstalled_apk_layoutfile:
                 useUninstalledApkLayoutfile();
                 break;
+            case R.id.btn_proxy_pattern_eg:
+                proxyPatternEgxample();
+                break;
         }
     }
 
@@ -73,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnUseUninstalledApkResource.setOnClickListener(this);
         btnUseUninstalledApkLayoutfile = (Button) findViewById(R.id.btn_use_uninstalled_apk_layoutfile);
         btnUseUninstalledApkLayoutfile.setOnClickListener(this);
+        btnProxyPatternEg = (Button) findViewById(R.id.btn_proxy_pattern_eg);
+        btnProxyPatternEg.setOnClickListener(this);
+
     }
 
     private void invokeNormalMethod(){
@@ -167,6 +173,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void useUninstalledApkLayoutfile(){
 
+    }
+
+    private void proxyPatternEgxample(){
+        startActivity(new Intent(MainActivity.this, ProxyPatternActivity.class));
     }
 
     @Override
