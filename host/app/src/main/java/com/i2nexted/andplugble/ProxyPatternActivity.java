@@ -23,6 +23,8 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
     private Button btnDynamicProxy;
     private Button btnUseModifiedInsrumentation;
     private Button btnUseModifiedActivityInstrumentation;
+    private Button btnAidlEg;
+    private Button btnHookSysService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,10 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
         btnUseModifiedInsrumentation.setOnClickListener(this);
         btnUseModifiedActivityInstrumentation = (Button) findViewById(R.id.btn_use_modified_activity_instrumentation);
         btnUseModifiedActivityInstrumentation.setOnClickListener(this);
+        btnAidlEg = (Button) findViewById(R.id.btn_aidl_eg);
+        btnAidlEg.setOnClickListener(this);
+        btnHookSysService = (Button) findViewById(R.id.btn_hook_sys_service);
+        btnHookSysService.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +64,12 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.btn_use_modified_activity_instrumentation:
                 openActivity();
+                break;
+            case R.id.btn_aidl_eg:
+                ipcEgxample();
+                break;
+            case R.id.btn_hook_sys_service:
+                hookSysService();
                 break;
         }
     }
@@ -91,11 +103,17 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
         startActivity(new Intent(ProxyPatternActivity.this, InstalledPluginsActivity.class));
     }
 
+    private void ipcEgxample(){
+        startActivity(new Intent(ProxyPatternActivity.this, IPCActivity.class));
+    }
+
+    private void hookSysService(){
+        startActivity(new Intent(ProxyPatternActivity.this, HookSysServiceActivity.class));
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
 //        HookHelper.attachApplicationContext();
     }
-
-
 }

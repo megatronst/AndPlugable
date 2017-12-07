@@ -22,4 +22,12 @@
         android:id="@+id/btn_use_modified_activity_instrumentation"
         style="@style/btn_style"
         android:text="@string/text_open_modified_activity_instrumentation"/>
+    <Button
+        android:id="@+id/btn_aidl_eg"
+        style="@style/btn_style"
+        android:text="@string/text_bind_ipc"/>
+    <Button
+        android:id="@+id/btn_hook_sys_service"
+        style="@style/btn_style"
+        android:text="@string/text_hook_sys_clip_service"/>
 </LinearLayout>

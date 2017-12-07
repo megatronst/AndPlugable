@@ -24,7 +24,18 @@
         <activity android:name=".InstalledPluginsActivity" />
         <activity android:name=".UninstalledPluginsActivity" />
         <activity android:name=".UseApkLayoutFileActivity" />
-        <activity android:name=".ProxyPatternActivity"></activity>
+        <activity android:name=".ProxyPatternActivity" />
+        <activity android:name=".IPCActivity" />
+
+        <service
+            android:name=".MyService"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.i2nexted.andplugble.ICoupute" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".HookSysServiceActivity"></activity>
     </application>
 
 </manifest>

@@ -13,5 +13,11 @@
     <string name="toast_rom_modyfied">rom 层被修改了，我也很无奈，自己去适配额</string>
     <string name="text_open_modified_context_impl_instrumentation">通过修改ContextImpl中的instrumentation打开activity</string>
     <string name="text_open_modified_activity_instrumentation">通过修改Activity中的instrumentation打开activity</string>
+    <string name="text_bind_ipc">Binder 之多进程通信</string>
+    <string name="text_bind">绑定远程服务</string>
+    <string name="text_unbind">解除远程服务的绑定</string>
+    <string name="text_remote_compute">使用远程服务进行计算操作</string>
+    <string name="toast_please_bind_service">请先绑定服务</string>
+    <string name="text_hook_sys_clip_service">hook系统剪切板服务实例</string>
 
 </resources>
