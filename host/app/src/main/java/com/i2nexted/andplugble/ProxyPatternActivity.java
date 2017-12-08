@@ -19,7 +19,7 @@ import com.i2nexted.andplugble.proxys.interfaces.IPerson;
 
 import java.lang.reflect.Proxy;
 
-public class ProxyPatternActivity extends AppCompatActivity implements View.OnClickListener{
+public class ProxyPatternActivity extends BaseActivity{
     private Button btnStaticProxy;
     private Button btnDynamicProxy;
     private Button btnUseModifiedInsrumentation;
@@ -29,36 +29,42 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
     private Button btnHookAms;
     private Button btnHookPmg;
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proxy_pattern);
-        HookHelper.attachActivityContext(this);
-
-        initView();
     }
 
-    private void initView() {
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.activity_proxy_pattern);
+    }
+
+    @Override
+    protected void preProcess() {
+        HookHelper.attachActivityContext(this);
+    }
+
+    @Override
+    protected void initView() {
         btnStaticProxy = (Button) findViewById(R.id.btn_static_proxy);
-        btnStaticProxy.setOnClickListener(this);
         btnDynamicProxy = (Button) findViewById(R.id.btn_dynamic_proxy);
-        btnDynamicProxy.setOnClickListener(this);
         btnUseModifiedInsrumentation = (Button) findViewById(R.id.btn_use_modified_insrumentation);
-        btnUseModifiedInsrumentation.setOnClickListener(this);
         btnUseModifiedActivityInstrumentation = (Button) findViewById(R.id.btn_use_modified_activity_instrumentation);
-        btnUseModifiedActivityInstrumentation.setOnClickListener(this);
         btnAidlEg = (Button) findViewById(R.id.btn_aidl_eg);
-        btnAidlEg.setOnClickListener(this);
         btnHookSysService = (Button) findViewById(R.id.btn_hook_sys_service);
-        btnHookSysService.setOnClickListener(this);
         btnHookAms = (Button) findViewById(R.id.btn_hook_ams);
-        btnHookAms.setOnClickListener(this);
         btnHookPmg = (Button) findViewById(R.id.btn_hook_pmg);
+    }
+
+    @Override
+    protected void setListener() {
+        btnStaticProxy.setOnClickListener(this);
+        btnDynamicProxy.setOnClickListener(this);
+        btnUseModifiedInsrumentation.setOnClickListener(this);
+        btnUseModifiedActivityInstrumentation.setOnClickListener(this);
+        btnAidlEg.setOnClickListener(this);
+        btnHookSysService.setOnClickListener(this);
+        btnHookAms.setOnClickListener(this);
         btnHookPmg.setOnClickListener(this);
     }
 
@@ -117,23 +123,23 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void openActivity(){
-        startActivity(new Intent(ProxyPatternActivity.this, InstalledPluginsActivity.class));
+        startActivity(InstalledPluginsActivity.class);
     }
 
     private void ipcEgxample(){
-        startActivity(new Intent(ProxyPatternActivity.this, IPCActivity.class));
+        startActivity(IPCActivity.class);
     }
 
     private void hookSysService(){
-        startActivity(new Intent(ProxyPatternActivity.this, HookSysServiceActivity.class));
+        startActivity(HookSysServiceActivity.class);
     }
 
     private void hookAMS(){
-        startActivity(new Intent(ProxyPatternActivity.this, HookAmsActivity.class));
+        startActivity(HookAmsActivity.class);
     }
 
     private void hookPMS(){
-        startActivity(new Intent(ProxyPatternActivity.this, HookPMSActivity.class));
+        startActivity(HookPMSActivity.class);
     }
 
     @Override

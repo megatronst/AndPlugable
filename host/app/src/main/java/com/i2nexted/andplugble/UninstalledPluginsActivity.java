@@ -34,12 +34,9 @@ import java.util.List;
 import dalvik.system.DexClassLoader;
 import dalvik.system.PathClassLoader;
 
-public class UninstalledPluginsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class UninstalledPluginsActivity extends BaseActivity{
     private ListView lvPluginList;
     private ImageView imgOtherApk;
-
-
-
     private Adapter_uninstalled mAdapter;
     private List<ApplicationInfo> pluginBeens;
     private List<String> apkPath;
@@ -47,18 +44,15 @@ public class UninstalledPluginsActivity extends AppCompatActivity implements Ada
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void setContentView() {
         setContentView(R.layout.activity_uninstalled_plugins);
-        initListview();
-        initData();
-        getApks();
-
     }
 
-    private void initData() {
-        getPlugins();
-    }
-
-    private void initListview() {
+    @Override
+    protected void initView() {
         pluginBeens = new ArrayList<>();
         apkPath = new ArrayList<>();
         mAdapter = new Adapter_uninstalled(this,pluginBeens, R.layout.item_uninstalled);
@@ -67,8 +61,11 @@ public class UninstalledPluginsActivity extends AppCompatActivity implements Ada
         lvPluginList.setOnItemClickListener(this);
         imgOtherApk = (ImageView) findViewById(R.id.img_other_apk);
     }
-
-
+    @Override
+    protected void initData() {
+        getPlugins();
+        getApks();
+    }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -166,26 +163,5 @@ public class UninstalledPluginsActivity extends AppCompatActivity implements Ada
         }
         return null;
     }
-
-//    private Resources getApkResource(String apkName){
-//        try {
-//            Method getSystem = AssetManager.class.getMethod("getSystem",new Class[]{});
-//            AssetManager assetManager = (AssetManager) getSystem.invoke(AssetManager.class, new Object[]{});
-////            AssetManager assetManager = AssetManager.class.newInstance();
-//            Method addAsset = assetManager.getClass().getMethod("addAssetPath", String.class);
-//            addAsset.invoke(assetManager, apkName);
-//            Resources resource = this.getResources();
-//            Resources mRsource = new Resources(assetManager, resource.getDisplayMetrics(), resource.getConfiguration());
-//            return mRsource;
-////            return this.getResources();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        } catch (NoSuchMethodException e) {
-//            e.printStackTrace();
-//        } catch (InvocationTargetException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
 }

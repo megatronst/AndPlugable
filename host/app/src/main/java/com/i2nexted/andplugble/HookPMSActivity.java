@@ -9,19 +9,29 @@ import android.widget.Button;
 
 import com.i2nexted.andplugble.proxys.PMSHookHelper;
 
-public class HookPMSActivity extends AppCompatActivity implements View.OnClickListener{
+public class HookPMSActivity extends BaseActivity{
     private Button btnHookPms;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hook_pms);
+    }
 
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.activity_hook_pms);
+    }
+
+    @Override
+    protected void initView() {
         btnHookPms = (Button) findViewById(R.id.btn_hook_pms);
+    }
+
+    @Override
+    protected void setListener() {
         btnHookPms.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {

@@ -10,15 +10,26 @@ import android.widget.Button;
 
 import com.i2nexted.andplugble.proxys.AMSHookHelper;
 
-public class HookAmsActivity extends AppCompatActivity implements View.OnClickListener{
+public class HookAmsActivity extends BaseActivity{
     private Button btnOpenAnyActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hook_ams);
+    }
 
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.activity_hook_ams);
+    }
+
+    @Override
+    protected void initView() {
         btnOpenAnyActivity = (Button) findViewById(R.id.btn_open_any_activity);
+    }
+
+    @Override
+    protected void setListener() {
         btnOpenAnyActivity.setOnClickListener(this);
     }
 

@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 
 import dalvik.system.DexClassLoader;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity{
     private Button btnLoadClassFile;
     private Button btnInvokeNormalFunc;
     private Button btnOpenActivity;
@@ -31,8 +31,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void setContentView() {
         setContentView(R.layout.activity_main);
-        initView();
+    }
+
+    @Override
+    protected void initView() {
+        FileUtil.getDir(FileUtil.CLASS_DIR);
+        btnLoadClassFile = (Button) findViewById(R.id.btn_invoke_static_func);
+        btnInvokeNormalFunc = (Button) findViewById(R.id.btn_invoke_normal_func);
+        btnOpenActivity = (Button) findViewById(R.id.btn_use_installed_apk_recource);
+        btnOpenInstalledActivity = (Button) findViewById(R.id.btn_use_installed_apk_recource);
+        btnUseUninstalledApkResource = (Button) findViewById(R.id.btn_use_uninstalled_apk_resource);
+        btnUseUninstalledApkLayoutfile = (Button) findViewById(R.id.btn_use_uninstalled_apk_layoutfile);
+        btnProxyPatternEg = (Button) findViewById(R.id.btn_proxy_pattern_eg);
+    }
+
+    @Override
+    protected void setListener() {
+        btnLoadClassFile.setOnClickListener(this);
+        btnInvokeNormalFunc.setOnClickListener(this);
+        btnOpenActivity.setOnClickListener(this);
+        btnOpenInstalledActivity.setOnClickListener(this);
+        btnUseUninstalledApkResource.setOnClickListener(this);
+        btnUseUninstalledApkLayoutfile.setOnClickListener(this);
+        btnProxyPatternEg.setOnClickListener(this);
     }
 
     @Override
@@ -60,25 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 proxyPatternEgxample();
                 break;
         }
-    }
-
-    private void initView(){
-        FileUtil.getDir(FileUtil.CLASS_DIR);
-        btnLoadClassFile = (Button) findViewById(R.id.btn_invoke_static_func);
-        btnLoadClassFile.setOnClickListener(this);
-        btnInvokeNormalFunc = (Button) findViewById(R.id.btn_invoke_normal_func);
-        btnInvokeNormalFunc.setOnClickListener(this);
-        btnOpenActivity = (Button) findViewById(R.id.btn_use_installed_apk_recource);
-        btnOpenActivity.setOnClickListener(this);
-        btnOpenInstalledActivity = (Button) findViewById(R.id.btn_use_installed_apk_recource);
-        btnOpenInstalledActivity.setOnClickListener(this);
-        btnUseUninstalledApkResource = (Button) findViewById(R.id.btn_use_uninstalled_apk_resource);
-        btnUseUninstalledApkResource.setOnClickListener(this);
-        btnUseUninstalledApkLayoutfile = (Button) findViewById(R.id.btn_use_uninstalled_apk_layoutfile);
-        btnUseUninstalledApkLayoutfile.setOnClickListener(this);
-        btnProxyPatternEg = (Button) findViewById(R.id.btn_proxy_pattern_eg);
-        btnProxyPatternEg.setOnClickListener(this);
-
     }
 
     private void invokeNormalMethod(){
@@ -164,11 +171,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void useInstalledApkResource(){
-        startActivity(new Intent(MainActivity.this, InstalledPluginsActivity.class));
+        startActivity(InstalledPluginsActivity.class);
     }
 
     private void useUninstalledApkResource(){
-        startActivity(new Intent(MainActivity.this, UninstalledPluginsActivity.class));
+        startActivity(UninstalledPluginsActivity.class);
     }
 
     private void useUninstalledApkLayoutfile(){
@@ -176,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void proxyPatternEgxample(){
-        startActivity(new Intent(MainActivity.this, ProxyPatternActivity.class));
+        startActivity(ProxyPatternActivity.class);
     }
 
     @Override

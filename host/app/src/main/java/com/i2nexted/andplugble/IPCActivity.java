@@ -11,30 +11,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class IPCActivity extends AppCompatActivity implements View.OnClickListener{
+public class IPCActivity extends BaseActivity{
     private Button btnBind;
     private Button btnUnbind;
     private Button btnRemoteCompute;
-
     private ICompute binder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ipc);
-        initView();
-
     }
 
-    private void initView() {
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.activity_ipc);
+    }
+
+    @Override
+    protected void initView() {
         btnBind = (Button) findViewById(R.id.btn_bind);
-        btnBind.setOnClickListener(this);
         btnUnbind = (Button) findViewById(R.id.btn_unbind);
-        btnUnbind.setOnClickListener(this);
         btnRemoteCompute = (Button) findViewById(R.id.btn_remote_compute);
+    }
+
+    @Override
+    protected void setListener() {
+        btnBind.setOnClickListener(this);
+        btnUnbind.setOnClickListener(this);
         btnRemoteCompute.setOnClickListener(this);
     }
-
 
     private boolean isDissConnected = true;
     private ServiceConnection connection = new ServiceConnection() {

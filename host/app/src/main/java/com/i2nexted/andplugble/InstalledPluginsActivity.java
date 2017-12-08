@@ -22,29 +22,29 @@ import java.util.List;
 
 import dalvik.system.PathClassLoader;
 
-public class InstalledPluginsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class InstalledPluginsActivity extends BaseActivity{
     private ListView lvPluginList;
     private ImageView imgOtherApk;
-
-
-
     private Adapter_plubin mAdapter;
     private List<PluginBean> pluginBeens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_installed_plugins);
-        initData();
-        initListview();
-
     }
 
-    private void initData() {
+    @Override
+    protected void setContentView() {
+        setContentView(R.layout.activity_installed_plugins);
+    }
+
+    @Override
+    protected void initParam() {
         pluginBeens = getPlugins();
     }
 
-    private void initListview() {
+    @Override
+    protected void initView() {
         mAdapter = new Adapter_plubin(this, pluginBeens);
         lvPluginList = (ListView) findViewById(R.id.lv_plugin_list);
         lvPluginList.setAdapter(mAdapter);
