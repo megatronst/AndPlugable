@@ -30,4 +30,12 @@
         android:id="@+id/btn_hook_sys_service"
         style="@style/btn_style"
         android:text="@string/text_hook_sys_clip_service"/>
+    <Button
+        android:id="@+id/btn_hook_ams"
+        style="@style/btn_style"
+        android:text="@string/hook_activitymanager"/>
+    <Button
+        android:id="@+id/btn_hook_pmg"
+        style="@style/btn_style"
+        android:text="@string/text_hook_pms"/>
 </LinearLayout>

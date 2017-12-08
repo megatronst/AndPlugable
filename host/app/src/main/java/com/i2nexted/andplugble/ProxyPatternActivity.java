@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
+import com.i2nexted.andplugble.proxys.AMSHookHelper;
 import com.i2nexted.andplugble.proxys.HookHelper;
 import com.i2nexted.andplugble.proxys.impl.MyInvocationHandler;
 import com.i2nexted.andplugble.proxys.impl.PersonImpl;
@@ -25,6 +26,13 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
     private Button btnUseModifiedActivityInstrumentation;
     private Button btnAidlEg;
     private Button btnHookSysService;
+    private Button btnHookAms;
+    private Button btnHookPmg;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,10 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
         btnAidlEg.setOnClickListener(this);
         btnHookSysService = (Button) findViewById(R.id.btn_hook_sys_service);
         btnHookSysService.setOnClickListener(this);
+        btnHookAms = (Button) findViewById(R.id.btn_hook_ams);
+        btnHookAms.setOnClickListener(this);
+        btnHookPmg = (Button) findViewById(R.id.btn_hook_pmg);
+        btnHookPmg.setOnClickListener(this);
     }
 
     @Override
@@ -71,6 +83,11 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_hook_sys_service:
                 hookSysService();
                 break;
+            case R.id.btn_hook_ams:
+                hookAMS();
+                break;
+            case R.id.btn_hook_pmg:
+                hookPMS();
         }
     }
 
@@ -109,6 +126,14 @@ public class ProxyPatternActivity extends AppCompatActivity implements View.OnCl
 
     private void hookSysService(){
         startActivity(new Intent(ProxyPatternActivity.this, HookSysServiceActivity.class));
+    }
+
+    private void hookAMS(){
+        startActivity(new Intent(ProxyPatternActivity.this, HookAmsActivity.class));
+    }
+
+    private void hookPMS(){
+        startActivity(new Intent(ProxyPatternActivity.this, HookPMSActivity.class));
     }
 
     @Override

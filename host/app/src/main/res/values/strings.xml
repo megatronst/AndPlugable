@@ -19,5 +19,10 @@
     <string name="text_remote_compute">使用远程服务进行计算操作</string>
     <string name="toast_please_bind_service">请先绑定服务</string>
     <string name="text_hook_sys_clip_service">hook系统剪切板服务实例</string>
+    <string name="hook_activitymanager">hook系统activitymanager服务实例</string>
+    <string name="text_open_activity">打开一个activity</string>
+    <string name="text_hook_pms">hook系统的packagemanager</string>
+    <string name="text_activity_hooked">activity manager被hook了</string>
+    <string name="text_pms_hooked">pms被hook了</string>
 
 </resources>

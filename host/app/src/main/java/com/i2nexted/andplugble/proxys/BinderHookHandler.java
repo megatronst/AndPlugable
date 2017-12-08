@@ -33,7 +33,7 @@ public class BinderHookHandler implements InvocationHandler{
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         if ("getPrimaryClip".equals(method.getName())){
-            return ClipData.newPlainText(null,"you've been hacked");
+            return ClipData.newPlainText(null,"剪切板服务被hook了");
         }
 
         if ("hasPrimaryClip".equals(method.getName())){

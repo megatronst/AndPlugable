@@ -20,6 +20,7 @@ public class HookSysServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hook_sys_service);
         BinderHelper.hookClipboardService();
         etTest = (EditText) findViewById(R.id.et_test);
+
     }
 
 
