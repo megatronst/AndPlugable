@@ -38,4 +38,8 @@
         android:id="@+id/btn_hook_pmg"
         style="@style/btn_style"
         android:text="@string/text_hook_pms"/>
+    <Button
+        android:id="@+id/btn_hook_activity_life_cercle"
+        style="@style/btn_style"
+        android:text="@string/text_start_activity_without_regis_in_am"/>
 </LinearLayout>

@@ -24,5 +24,8 @@
     <string name="text_hook_pms">hook系统的packagemanager</string>
     <string name="text_activity_hooked">activity manager被hook了</string>
     <string name="text_pms_hooked">pms被hook了</string>
+    <string name="text_start_activity_without_regis_in_am">启动一个没有在AndroidManifest文件中注册的activity</string>
+    <string name="text_not_registed_act_lable">打开一个没有在androidmanifest文件中注册的activity</string>
+    <string name="text_stub_activity">stubactivity</string>
 
 </resources>

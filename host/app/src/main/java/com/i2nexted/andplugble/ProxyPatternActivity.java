@@ -28,6 +28,7 @@ public class ProxyPatternActivity extends BaseActivity{
     private Button btnHookSysService;
     private Button btnHookAms;
     private Button btnHookPmg;
+    private Button btnHookActivityLifeCercle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class ProxyPatternActivity extends BaseActivity{
         btnHookSysService = (Button) findViewById(R.id.btn_hook_sys_service);
         btnHookAms = (Button) findViewById(R.id.btn_hook_ams);
         btnHookPmg = (Button) findViewById(R.id.btn_hook_pmg);
+        btnHookActivityLifeCercle = (Button) findViewById(R.id.btn_hook_activity_life_cercle);
     }
 
     @Override
@@ -66,6 +68,7 @@ public class ProxyPatternActivity extends BaseActivity{
         btnHookSysService.setOnClickListener(this);
         btnHookAms.setOnClickListener(this);
         btnHookPmg.setOnClickListener(this);
+        btnHookActivityLifeCercle.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +97,10 @@ public class ProxyPatternActivity extends BaseActivity{
                 break;
             case R.id.btn_hook_pmg:
                 hookPMS();
+                break;
+            case R.id.btn_hook_activity_life_cercle:
+                testLifeCercle();
+                break;
         }
     }
 
@@ -140,6 +147,10 @@ public class ProxyPatternActivity extends BaseActivity{
 
     private void hookPMS(){
         startActivity(HookPMSActivity.class);
+    }
+
+    private void testLifeCercle(){
+        startActivity(NotRegistedActivity.class);
     }
 
     @Override

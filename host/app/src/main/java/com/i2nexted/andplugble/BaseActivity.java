@@ -11,19 +11,26 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView();
         preProcess();
+        setContentView();
         initParam();
         initView();
         initData();
         setListener();
     }
+    // 添加一些预处理
     protected void preProcess(){}
+    // 设置activity的contentview
     protected abstract void setContentView();
+    // 初始化控件
     protected abstract void initView();
+    // 为对应控件设置时间监听
     protected  void setListener(){}
+    // 初始化所需的变量
     protected  void initParam(){}
+    // 初始化所需数据
     protected  void initData(){}
+    // 打开activity
     protected void startActivity(Class<?> clazz){
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
@@ -31,7 +38,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-
     }
 
     @Override

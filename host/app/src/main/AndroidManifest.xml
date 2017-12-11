@@ -38,7 +38,8 @@
         <activity android:name=".HookSysServiceActivity" />
         <activity android:name=".HookAmsActivity" />
         <activity android:name=".HookPMSActivity" />
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".NotRegistedActivity" />
+        <activity android:name=".StubActivity" />
     </application>
 
 </manifest>
