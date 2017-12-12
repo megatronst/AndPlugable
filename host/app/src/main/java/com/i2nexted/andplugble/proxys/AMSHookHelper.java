@@ -10,7 +10,7 @@ import java.lang.reflect.Proxy;
  */
 
 public class AMSHookHelper {
-    public static void hookAms(Context context){
+    public static void hookAms(){
         try {
             // 获取defalt对象
             Class<?> activityManagerNative = Class.forName("android.app.ActivityManagerNative");
@@ -26,7 +26,7 @@ public class AMSHookHelper {
             Class<?> iActivityManagerInterface = Class.forName("android.app.IActivityManager");
             Object proxy = Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
                     new Class[]{iActivityManagerInterface},
-                    new IActivityManagerHandler(rawActivityManager, context));
+                    new IActivityManagerHandler(rawActivityManager));
             // 替换instance
             instance.set(obj, proxy);
         } catch (ClassNotFoundException e) {

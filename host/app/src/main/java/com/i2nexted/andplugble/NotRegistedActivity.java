@@ -1,11 +1,13 @@
 package com.i2nexted.andplugble;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.i2nexted.andplugble.proxys.AMSHookHelper;
+import com.i2nexted.andplugble.proxys.ActivityThreadCallBackHookHelper;
 
 public class NotRegistedActivity extends BaseActivity {
     private Button openUnregistedAct;
@@ -17,7 +19,7 @@ public class NotRegistedActivity extends BaseActivity {
 
     @Override
     protected void preProcess() {
-        AMSHookHelper.hookAms(this);
+
     }
 
     @Override
@@ -40,9 +42,17 @@ public class NotRegistedActivity extends BaseActivity {
         switch (v.getId()){
             case R.id.open_unregisted_act:
                 // 此处的TargetActivity.class是没有在AndroidManifest.xml文件中注册过的
-                // 由于AMSHookHelper.hookAms(this);的执行现在打开这种没有注册的activity不会再包activity not found的错误了
+                // 由于AMSHookHelper.hookAms(this);的执行现在打开这种没有注册的activity不会再报activity not found的错误了
                 startActivity(new Intent(NotRegistedActivity.this, TargetActivity.class));
                 break;
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        AMSHookHelper.hookAms();
+        ActivityThreadCallBackHookHelper.hookHandlerCallbackd();
+
     }
 }

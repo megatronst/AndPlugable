@@ -35,7 +35,7 @@ public class HookAmsActivity extends BaseActivity{
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        AMSHookHelper.hookAms(this);
+        AMSHookHelper.hookAms();
         super.attachBaseContext(newBase);
     }
 

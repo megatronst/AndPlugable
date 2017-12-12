@@ -16,12 +16,10 @@ import java.lang.reflect.Method;
  */
 
 public class IActivityManagerHandler implements InvocationHandler {
-    private static final String EXTRA_TARGET_INTENT = "extra_target";
+    public static final String EXTRA_TARGET_INTENT = "extra_target";
     private Object base;
-    private Context context;
-    public IActivityManagerHandler(Object base, Context context) {
+    public IActivityManagerHandler(Object base) {
         this.base = base;
-        this.context = context;
     }
 
     @Override
@@ -39,7 +37,7 @@ public class IActivityManagerHandler implements InvocationHandler {
             Intent newIntent = new Intent();
 
             String targetPackage = "com.i2nexted.andplugble";
-            ComponentName componentName = new ComponentName(targetPackage, StubActivity.class.getCanonicalName());
+            ComponentName componentName = new ComponentName(targetPackage, StubActivity.class.getName());
             newIntent.setComponent(componentName);
             newIntent.putExtra(EXTRA_TARGET_INTENT, raw);
             args[index] = newIntent;
