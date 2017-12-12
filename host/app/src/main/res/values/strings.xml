@@ -27,5 +27,7 @@
     <string name="text_start_activity_without_regis_in_am">启动一个没有在AndroidManifest文件中注册的activity</string>
     <string name="text_not_registed_act_lable">打开一个没有在androidmanifest文件中注册的activity</string>
     <string name="text_stub_activity">stubactivity</string>
-
+    <string name="title_activity_plugin_act_handle">PluginActHandleActivity</string>
+    <string name="text_opent_plug_activity">打开插件中的Activity</string>
+    <string name="text_open_plug_act">打开插件中的activity</string>
 </resources>

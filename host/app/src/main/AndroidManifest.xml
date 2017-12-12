@@ -40,6 +40,11 @@
         <activity android:name=".HookPMSActivity" />
         <activity android:name=".NotRegistedActivity" />
         <activity android:name=".StubActivity" />
+        <activity
+            android:name=".PluginActHandleActivity"
+            android:label="@string/title_activity_plugin_act_handle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TestPluginActActivity"></activity>
     </application>
 
 </manifest>
