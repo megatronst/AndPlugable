@@ -43,6 +43,7 @@ public class NotRegistedActivity extends BaseActivity {
             case R.id.open_unregisted_act:
                 // 此处的TargetActivity.class是没有在AndroidManifest.xml文件中注册过的
                 // 由于AMSHookHelper.hookAms(this);的执行现在打开这种没有注册的activity不会再报activity not found的错误了
+                // TODO: 2017/12/12  此处的TargetActivity必须直接继承自Activity如果继承自AppCompatActivity则会出现NoNameFoundException,具体原因还没有研究
                 startActivity(new Intent(NotRegistedActivity.this, TargetActivity.class));
                 break;
         }
